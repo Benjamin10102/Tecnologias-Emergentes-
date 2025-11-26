@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Examen</title>
+    <link rel="stylesheet" href="PRACTICA_7.css">
+</head>
+<body>
+
+    <nav>
+        <ul>
+            <button id="modoBtn" onclick="cambiarModo()">Cambiar a modo oscuro</button>
+            <a href="#sec1">Nombres y Apellidos</a> 
+            <a href="#sec2">Horarios</a> 
+            <a href="#sec3">Formulario</a> 
+            <a href="#sec4">Otros Datos</a>
+             
+        </ul>
+    </nav>
+<main>
+<section class="perfil">
+    <div class="portada">
+        <img src="imagenesportada.jpg.jpg" alt="Portada">
+    </div>
+
+    <div class="info">
+        <img src="imagenesperfil.jpg.jpg" alt="Foto de perfil" class="foto-perfil">
+        <section id="sec1">
+            <h1 class="text-gradient">TECNOLOGIAS EMERGENTES 2DO PARCIAL</h1>
+            <h2>NOMBRES: <ins>Benjamin Andres</ins></h2>
+            <h2>APELLIDOS: <del>Perez Ramos</del></h2>
+            <h2>SEMESTRE: <del>4° Semestre</del></h2>
+        </section>
+<section id="sec2">
+    <div style="text-align: center;">
+        <h2 class="text-gradient">Horarios</h2>
+        <h1 id="reloj"></h1>
+        <table border="10" style="margin: 0 auto;">
+            <tr>
+                <th>Horas</th>
+                <th>Lunes</th>
+                <th>Martes</th>
+                <th>Miercoles</th>
+                <th>Jueves</th>
+                <th>Viernes</th>
+            </tr>
+                <tr><td>07:45-10:00</td><td></td><td></td><td></td><td>Base de Datos</td><td colspan="2" rowspan="6" align="center">Libre</td></tr>
+                <tr><td>10:00-12:15</td><td></td><td>Investigacion Operativa I</td><td>Electronica</td><td>Tecnologias Emergentes</td></tr>
+                <tr><td>14:00–16:15</td><td></td><td></td><td>Analisis de Sistemas I</td><td></td></tr>
+                <tr><td>16:15-18:30</td><td>Base de Datos</td><td>Tecnologias Emergentes</td><td>Tecnologias Emergentes</td><td>Investigacion Operativa I</td></tr>
+                <tr><td>18:30-20:45</td><td>Sistemas Digitales</td><td>Analisis de Sistemas I</td><td>Sistemas Digitales</td><td>Electronica</td></tr>
+            </table>
+        </table>
+         
+    </div>
+</section>       
+        <section id="sec3">
+            <h2 class="text-gradient">Formulario</h2>
+            <form action="procesar.php" method="post" align="center">
+                <fieldset>
+                    <legend>Datos personales</legend>
+                    <label>Nombre:</label>
+                    <input type="text" name="nombre" required class="inputs">
+                    <label>Apellidos:</label>
+                    <input type="text" name="apellido" required class="inputs">
+                    <label>Ciudad:</label>
+                    <input list="ciudades" name="ciudad" class="inputs">
+                    <datalist id="ciudades">
+                        <option value="La Paz">
+                        <option value="Cochabamba">
+                        <option valu e="Santa Cruz">
+                        <option value="Potosi">
+                        <option value="Tarija">
+                        <option value="Oruro">
+                        <option value="Pando">
+                        <option value="Beni">
+                    </datalist>
+                    <label>Fecha:</label>
+                    <input type="date" required class="inputs">
+                    <label>Hora:</label>
+                    <input type="time" required class="inputs">
+                    <button type="submit">Enviar</button>
+                </fieldset>
+            </form>
+        </section>
+
+<section id="sec4">
+    <h2 class="text-gradient">Otros Datos</h2>
+    <p>Ingenieria de Sistemas - Sede Tupiza</p>
+
+<div class="temas-container">
+    <div class="tema-card">
+        <h3>Base de Datos</h3>
+        <p>Estudia el diseño, implementación y gestión de sistemas de información.</p>
+    </div>
+        <div class="tema-card">
+        <h3>Investigación Operativa I</h3>
+        <p>Optimiza recursos y procesos mediante modelos matemáticos y algoritmos.</p>
+    </div>
+    <div class="tema-card">
+        <h3>Tecnologías Emergentes</h3>
+        <p>Explora innovaciones como inteligencia artificial, blockchain y computación cuántica.</p>
+    </div>
+    <div class="tema-card">
+        <h3>Base de Datos</h3>
+        <p>Estudia el diseño, implementación y gestión de sistemas de información.</p>
+    </div>
+        <div class="tema-card">
+        <h3>Investigación Operativa I</h3>
+        <p>Optimiza recursos y procesos mediante modelos matemáticos y algoritmos.</p>
+    </div>
+    <div class="tema-card">
+        <h3>Tecnologías Emergentes</h3>
+        <p>Explora innovaciones como inteligencia artificial, blockchain y computación cuántica.</p>
+    </div>
+</div>
+</section>
+</main>
+
+    <footer align="center">
+        TODOS LOS DERECHOS RESERVADOS ©2025
+    </footer>
+<script>
+    let nombre = "Benjamin";
+    alert("Hola " + nombre + ", ¡bienvenido a tu pagina");
+
+
+</script>
+<script>
+function cambiarModo() {
+    document.body.classList.toggle("oscuro");
+
+    const btn = document.getElementById("modoBtn");
+    btn.textContent = document.body.classList.contains("oscuro")
+        ? "Cambiar a modo claro"
+        : "Cambiar a modo oscuro";
+}
+</script>
+
+
+<script>
+  function actualizarReloj() {
+    const ahora = new Date();
+    document.getElementById("reloj").textContent =
+      ahora.toLocaleTimeString();
+  }
+  setInterval(actualizarReloj, 1000);
+  actualizarReloj();
+</script>
+</body>
+</html>
