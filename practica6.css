@@ -215,10 +215,6 @@ main {
     object-fit: cover;
 }
 
-.azul-icono {
-    color: #1877f2;
-}
-
 /* ---------- PESTAÑAS ---------- */
 .pestanas {
     display: flex;
